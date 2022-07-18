@@ -1,23 +1,16 @@
 {
   "name": "connective-unconscious",
-  "version": "0.0.2",
-  "author": "Stephanie Aelmore",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "dependencies": {
-    "cookie-parser": "^1.4.4",
-    "debug": "^2.6.9",
-    "express": "^4.18.1",
-    "http-errors": "^1.8.1",
-    "https": "^1.0.0",
-    "morgan": "^1.10.0",
-    "pug": "^3.0.2"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/believeinlain/connective-unconscious.git"
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.1",
+    "svelte": "^3.49.0",
+    "vite": "^3.0.0"
   }
 }
