@@ -1,0 +1,59 @@
+extends layout
+
+block content
+  style(type='text/css').
+    :root {
+      background-image: url('/images/home_bkg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+    }
+  p /// Under Construction: further explanations and formatting improvements to come. ///
+	p Background:
+	p This is a simple quantum computer emulator that I programmed in
+	| order to gain a better understanding of quantum algorithms. I call
+	| it a "sim" because that's a catchier title, but it doesn't simulate
+	| any of the physical realities of qubits. Rather, it assumes that all
+	| qubits are perfect and noise-free. Hopefully anyone who comes across
+	| this page gains a better understanding of what a quantum computer is and
+	| how they are programmed, at least in an abstract sense. I must give credit
+	| to the book "Quantum Computing for Computer Scientists" by Noson S. Yanofsky and
+	| Mirco A. Mannucci, published by Cambridge University Press. It helped provide
+	| the background in linear algebra and complex vector spaces necessary to
+	| understand quantum algorithms, as well as providing a detailed explanation
+	| of the algorithms that I was able to implement in my emulator.
+	p The source code for this project can be found on github at: 
+	| <a href="https://github.com/believeinlain/quantum-sim">
+	| https://github.com/believeinlain/quantum-sim</a>.
+	p Boolean Linear Algebra:
+	p I think the best way to introduce quantum algorithms is to start with
+	| a representation of boolean algorithms using linear algebra. For example,
+	| starting with bits represented as column vectors, we have "1" = [0; 1]
+	| and "0" = [1; 0]. Then we can represent a series of bits as the tensor
+	| product of these column vectors. For example, "10" = [0; 1] &#x2297; 
+	| [1; 0] = [0; 0; 1; 0].
+	| Logic gates can be represented using matrices. We can represent the AND gate using
+	| the matrix [[1; 0] [1; 0] [1; 0] [0; 1]]. Since it takes two bits and outputs one,
+	| it is a 4x2 matrix. If we multiply this by [0; 0; 1; 0] we get [1; 0] = "0", which
+	| is the expected result of "1 AND 0". Similarly, we can represent the OR gate with
+	| the matrix [[1; 0] [0; 1] [0; 1] [0; 1]]. If we multiply this with [0; 0; 1; 0]
+	| then we get [0; 1] = "1" which is the result of "1 OR 0". Quantum algorithms
+	| are described in the same way, except instead of vectors composed of elements from
+	| the set {0, 1}, they are composed of complex numbers, and there are several 
+	| restrictions
+	| on what sort of "gates" are allowed, as well as what values a vector representing
+	| a qubit or set of qubits may take.
+	| <p> Representing Qubits Mathematically:
+	| <p> A qubit is fully described by a normalized complex vector. A typical way of
+	| visualizing this is with the "Bloch Sphere", where every possible state that
+	| a qubit can take is on the surface of a sphere with radius 1. The value "0" is
+	| on the top of the sphere, and the value "1" is on the bottom. Any other value
+	| can be considered to be a superposition of 0 and 1, such that when a qubit is
+	| measured (on the standard basis, which I may get into later), it will take either
+	| value, with a probability corresponding to how close its state was to that point
+	| on the sphere. For example, the qubit [1/sqrt(2); 1/sqrt(2)] represents a point
+	| on the "equator" of the bloch sphere, so if a qubit in this state is measured,
+	| then it has an equal chance of being measured in either the "0" or "1" states.
+
+block footer 
+  p Website by Stephanie Aelmore. Source available <a href="https://github.com/believeinlain/connectiveunconscious">here</a> under the MIT license.
