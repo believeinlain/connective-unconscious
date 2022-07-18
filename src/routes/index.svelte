@@ -1,3 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> 
-    to read the documentation</p>
+
+<svelte:head>
+    <title>Connective Unconscious</title>
+</svelte:head>
+
+<p>Welcome to the Connective Unconscious</p>
+<p>This is where I host personal projects that I want to share.</p>
+<ul>
+    <li><a href="/nihonnoyume/">日本の夢</a> 
+        An illustrated poem, half-remembered from disjointed dreams.</li>
+    <li><a href="/jikannoyume/">時間の夢</a> 
+        A collection of photographs.</li>
+    <li><a href="/planetgen/">🪐</a> 
+        A simple toy for generating faultlines, and eventually terrestrial planets.</li>
+</ul>
