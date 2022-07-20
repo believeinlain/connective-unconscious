@@ -3,8 +3,8 @@
     <h1>Connective Unconscious</h1>
     <div class="navbar">
         <a href="/">Home</a>
-        <a href="/gallery/nihonnoyume">日本の夢</a>
-        <a href="/gallery/jikannoyume">時間の夢</a>
+        <a href="/nihonnoyume">日本の夢</a>
+        <a href="/jikannoyume">時間の夢</a>
         <a href="/planetgen">🪐</a>
     </div>
 </header>
