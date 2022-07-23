@@ -88,7 +88,6 @@
 		border: 1px solid #222;
 		padding: 5px;
 		background-color: rgba(34, 34, 34, 0.8);
-		font-size: x-large;
 	}
 	a:link,
 	a:visited {

@@ -1,6 +1,4 @@
-<div class="content">
-	<slot />
-</div>
+<slot />
 
 <style>
 	:root {
@@ -26,12 +24,5 @@
 	}
 	:global(a:visited) {
 		color: rgb(102, 130, 206);
-	}
-	.content {
-		background-color: rgba(17, 17, 17, 0.8);
-		max-width: 800px;
-		margin: auto;
-		padding: 2%;
-		padding-top: var(--header-height);
 	}
 </style>
