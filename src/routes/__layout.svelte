@@ -23,7 +23,9 @@
     </p>
 </footer>
 
-<style>
+<style src="./style.css"></style>
+
+<!-- <style>
     :root {
         --header-height: 90px;
         background-image: url('/images/home_bkg.jpg');
@@ -33,7 +35,7 @@
         font-family: Helvetica, Arial, sans-serif;
         color: #ccc;
     }
-    :global(h1) {
+    /* :global(h1) {
         font-size: 30px;
     }
     :global(a:link) {
@@ -51,7 +53,7 @@
     }
     :global(a:active) {
         text-decoration: underline;
-    }
+    } */
     .content {
         background-color: rgba(17, 17, 17, 0.8);
         max-width: 800px;
@@ -116,4 +118,4 @@
         padding-bottom: 0;
         height: fit-content;
     }
-</style>
+</style> -->
