@@ -1,7 +1,7 @@
 <script>
 	import Frame from '$lib/Frame.svelte';
 	import Navbar from '$lib/Navbar.svelte';
-	import Content from '../lib/Content.svelte';
+	import Content from '$lib/Content.svelte';
 </script>
 
 <svelte:head>
