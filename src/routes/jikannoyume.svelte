@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>日本の夢</title>
+    <title>時間の夢</title>
 </svelte:head>
 
 <script>
@@ -9,10 +9,10 @@
 </script>
 
 <Frame type='header'>
-    <Navbar title='日本の夢'></Navbar>
+    <Navbar title='時間の夢'></Navbar>
 </Frame>
 
-<Gallery album_name='nihonnoyume'></Gallery>
+<Gallery album_name='jikannoyume'></Gallery>
 
 <Frame type='footer'>
     <p>Photos by Stephanie Aelmore, no rights reserved.</p>
