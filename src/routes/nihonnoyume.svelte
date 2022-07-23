@@ -1,3 +1,6 @@
+<svelte:head>
+    <title>Connective Unconscious</title>
+</svelte:head>
 
 <script context="module">
     export async function load({url}) {
@@ -12,7 +15,7 @@
             };
         }
     }
-    export function get_album_photo(album, image, captions) {
+    export function get_album_photo(image, captions) {
         let photo_array = Object.getOwnPropertyNames(captions);
 
         let photo_id = 0;
@@ -29,59 +32,87 @@
 </script>
 
 <script>
+    import Frame from "$lib/Frame.svelte";
+    import Navbar from "$lib/Navbar.svelte";
     import { page } from '$app/stores';
-    import captions from '$lib/nihonnoyume.json';
+    import captions from '$lib/captions/nihonnoyume.json';
 
     const image = $page.url.searchParams.get('image');
 
     export let album_name = 'nihonnoyume';
     export let { photo_name, photo_id, last_id, next_id } = 
-        get_album_photo(album_name, image, captions);
+        get_album_photo(image, captions);
     export let caption = captions[photo_name];
 </script>
 
-<div class="gallery">
-    <div class="content">
-        <img src={`/photos/${album_name}/${photo_name}`} alt='alt-text' />
-    </div>
-    <a href={`/photos/${album_name}/?image=${next_id}`} class="gallery">先</a>
-    <a href={`/photos/${album_name}/?image=${last_id}`} class="gallery">次</a>
-    <p class='caption'>{caption}</p>
+<Frame type='header'>
+    <Navbar title='日本の夢'></Navbar>
+</Frame>
+
+<div class='nav'>
+    <a href='/{album_name}/?image={last_id}' target='_self'>先</a>
+    <a href='/{album_name}/?image={next_id}' target='_self'>次</a>
 </div>
+
+<div class='gallery'>
+    <img 
+        src='/photos/{album_name}/{photo_name}'
+        alt='{caption}' 
+        title='{caption}' 
+    />
+</div>
+
+<Frame type='footer'>
+    <p>Photos by Stephanie Aelmore, no rights reserved.</p>
+</Frame>
 
 <style>
     .gallery {
-        position: absolute;
         top: 0;
         left: 0;
-        padding: 0;
-        margin: 0;
         height: 100%;
         width: 100%;
-        align-content: center;
         opacity: 1;
+        z-index: 0;
     }
     .gallery img {
         /* Position image centered */
         position: absolute;
+        margin: auto;
+        /* Fill the whole division */
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        margin: auto;
-        /* Fill the whole division */
         max-width: 100%;
         max-height: 100%;
     }
-    .gallery a {
-        position: relative;
+    .nav {
         top: var(--header-height);
-        margin-left: auto;
-        margin-right: auto;
+        display: inline-flex;
+        height: fit-content;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        z-index: 3;
+    }
+    a {
+        top: var(--header-height);
+        height: fit-content;
         width: 50%;
-        text-align: center;
         display: inline-block;
-        align-self: center;
-        padding: 5px;
+        text-align: center;
+        border: 1px solid #222;
+        padding: 1%;
+        background-color: rgba(34, 34, 34, 0.8);
+    }
+    a:link, a:visited {
+        border-color: #555;
+        color: #ddd;
+    }
+    a:hover {
+        color: #fff;
+        border-color: #fff;
+        text-decoration: none;
     }
 </style>

@@ -1,7 +1,15 @@
-
 <svelte:head>
     <title>Connective Unconscious</title>
 </svelte:head>
+
+<script>
+    import Frame from "$lib/Frame.svelte";
+    import Navbar from "$lib/Navbar.svelte";
+</script>
+
+<Frame type="header">
+    <Navbar title="Connective Unconscious"></Navbar>
+</Frame>
 
 <h1>Welcome to the Connective Unconscious</h1>
 <p>This is where I host personal projects that I want to share.</p>
@@ -13,3 +21,10 @@
     <li><a href="/planetgen/">🪐</a> 
         A simple toy for generating faultlines, and eventually terrestrial planets.</li>
 </ul>
+
+<Frame type="footer">
+    <p>Website by Stephanie Aelmore. Source available
+        <a href="https://github.com/believeinlain/connective-unconscious">here</a>
+        under the MIT License.
+    </p>
+</Frame>
