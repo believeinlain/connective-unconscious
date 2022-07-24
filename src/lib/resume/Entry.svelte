@@ -4,8 +4,8 @@
 </div>
 <hr />
 <div class="entry-heading">
-    <h4><slot name="location" /></h4>
-    <h4><slot name="gpa" /></h4>
+  <h4><slot name="location" /></h4>
+  <h4><slot name="gpa" /></h4>
 </div>
 <ul>
   <slot name="bullet-list" />
