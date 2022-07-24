@@ -1,5 +1,5 @@
 <script>
-  import Page from '$lib/Page.svelte';
+  import Page from '$lib/layout/Page.svelte';
 </script>
 
 <svelte:head>
@@ -16,7 +16,8 @@
     <p>
       Applet by Stephanie Aelmore. Source available
       <a href="https://github.com/believeinlain/planetgen-js" target="_blank"
-        >here</a>
+        >here</a
+      >
       under the MIT License.
     </p>
   </span>

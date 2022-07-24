@@ -1,10 +1,10 @@
 <script>
-  import Page from '$lib/Page.svelte';
+  import Page from '$lib/layout/Page.svelte';
 </script>
 
-<Page page_title="Demonstrations">
+<Page page_title="Demos">
   <span>
-    <h1>Welcome to my Demonstrations page</h1>
+    <h1>Welcome to my demonstrations page!</h1>
     <p>A collection of web applets and toys that I've made and hosted here.</p>
     <p>
       All source code is available on

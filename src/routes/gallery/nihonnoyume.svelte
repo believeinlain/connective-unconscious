@@ -1,6 +1,6 @@
 <script>
-  import Page from '$lib/Page.svelte';
-  import Gallery from '$lib/Gallery.svelte';
+  import Page from '$lib/layout/Page.svelte';
+  import Gallery from '$lib/gallery/Gallery.svelte';
 </script>
 
 <Page page_title="日本の夢">

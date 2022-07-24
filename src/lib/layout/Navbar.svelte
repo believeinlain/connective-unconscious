@@ -7,9 +7,6 @@
   <a href="/">Home</a>
   <a href="/gallery">Gallery</a>
   <a href="/demos">Demos</a>
-  <!-- <a href="/nihonnoyume">日本の夢</a>
-	<a href="/jikannoyume">時間の夢</a>
-	<a href="/planetgen">🪐</a> -->
   <a href="/resume">Resume</a>
 </div>
 

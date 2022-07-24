@@ -8,6 +8,6 @@
     max-width: 800px;
     margin: auto;
     padding: 2%;
-    padding-top: var(--header-height);
+    padding-top: calc(var(--header-height) - 10px);
   }
 </style>

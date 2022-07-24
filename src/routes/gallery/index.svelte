@@ -1,10 +1,10 @@
 <script>
-  import Page from '$lib/Page.svelte';
+  import Page from '$lib/layout/Page.svelte';
 </script>
 
 <Page page_title="Gallery">
   <span>
-    <h1>Welcome to the Gallery</h1>
+    <h2>Welcome to the Gallery</h2>
     <p>
       A collection of photos in the public domain that I've taken, assembled
       into meaningful sequences.
