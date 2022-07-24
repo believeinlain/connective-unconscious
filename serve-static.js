@@ -4,7 +4,7 @@ import express from 'express';
 
 const app = express();
 
-app.use(express.static('static'))
+app.use(express.static('static'));
 
 // let SvelteKit handle everything else, including serving prerendered pages and static assets
 app.use(handler);
@@ -14,5 +14,5 @@ app.use(handler);
 const port = 8080;
 
 app.listen(port, () => {
-	console.log('Serving static files on port ' + port);
+  console.log('Serving static files on port ' + port);
 });

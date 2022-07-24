@@ -1,5 +1,5 @@
 # Connective Unconscious
 
-Repository for my personal website: https://connectiveunconscious.com.  
+Repository for my personal website: https://connectiveunconscious.com.
 
-Built with SvelteKit.  
+Built with SvelteKit.
