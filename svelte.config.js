@@ -10,7 +10,7 @@ const config = {
 			envPrefix: ''
 		}),
 		files: {
-			assets: 'public',
+			assets: 'static',
 			lib: 'src/lib',
 			routes: 'src/routes'
 		},
