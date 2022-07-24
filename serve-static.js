@@ -1,5 +1,5 @@
 // serve-static.js
-import { port } from './build/index.js';
+// import { port } from './build/index.js';
 import { handler } from './build/handler.js';
 import express from 'express';
 
@@ -10,8 +10,8 @@ app.use(express.static('static'))
 // let SvelteKit handle everything else, including serving prerendered pages and static assets
 app.use(handler);
 
-const host = '127.0.0.1';
+const port = 8080;
 
-app.listen({ host, port }, () => {
+app.listen(port, () => {
 	console.log('Serving static files on port ' + port);
 });
