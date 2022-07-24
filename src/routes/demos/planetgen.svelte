@@ -14,7 +14,7 @@
   </span>
   <span slot="footer">
     <p>
-      Applet by Stephanie Aelmore. Source available at 
+      Applet by Stephanie Aelmore. Source available at
       <a href="https://github.com/believeinlain/planetgen-js" target="_blank">
         https://github.com/believeinlain/planetgen-js
       </a>

@@ -31,7 +31,10 @@
     <!-- Default copyright message -->
     <p>
       Website by Stephanie Aelmore. Source available
-      <a href="https://github.com/believeinlain/connective-unconscious" target="_blank">
+      <a
+        href="https://github.com/believeinlain/connective-unconscious"
+        target="_blank"
+      >
         here
       </a>
       under the MIT License.
