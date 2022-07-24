@@ -16,7 +16,7 @@
       </li>
       <li>
         <a href="/gallery/jikannoyume/">時間の夢</a>
-        A collection of photographs.
+        The passage of time.
       </li>
     </ul>
   </span>

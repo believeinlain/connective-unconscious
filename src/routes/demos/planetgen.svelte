@@ -8,17 +8,16 @@
     src="https://cdn.jsdelivr.net/gh/believeinlain/planetgen-js@0.1.3/dist/planetgen.js"></script>
 </svelte:head>
 
-<Page page_title="Planet Generator">
+<Page page_title="Planet Generator 🪐">
   <span>
     <canvas id="renderCanvas" touch-action="none" />
   </span>
   <span slot="footer">
     <p>
-      Applet by Stephanie Aelmore. Source available
-      <a href="https://github.com/believeinlain/planetgen-js" target="_blank"
-        >here</a
-      >
-      under the MIT License.
+      Applet by Stephanie Aelmore. Source available at 
+      <a href="https://github.com/believeinlain/planetgen-js" target="_blank">
+        https://github.com/believeinlain/planetgen-js
+      </a>
     </p>
   </span>
 </Page>

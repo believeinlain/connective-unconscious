@@ -9,7 +9,6 @@
   const head_title = page_title
     ? `${page_title} : Connective Unconscious`
     : 'Connective Unconscious';
-  const display_title = page_title ? page_title : 'Connective Unconscious';
 </script>
 
 <svelte:head>
@@ -32,7 +31,9 @@
     <!-- Default copyright message -->
     <p>
       Website by Stephanie Aelmore. Source available
-      <a href="https://github.com/believeinlain/connective-unconscious">here</a>
+      <a href="https://github.com/believeinlain/connective-unconscious" target="_blank">
+        here
+      </a>
       under the MIT License.
     </p>
   </slot>

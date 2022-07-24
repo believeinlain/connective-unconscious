@@ -4,14 +4,8 @@
 
 <Page page_title="Demos">
   <span>
-    <h1>Welcome to my demonstrations page!</h1>
+    <h2>Welcome to my demonstrations page!</h2>
     <p>A collection of web applets and toys that I've made and hosted here.</p>
-    <p>
-      All source code is available on
-      <a href="https://github.com/believeinlain" _target="blank">
-        my GitHub page.
-      </a>
-    </p>
     <ul>
       <li>
         <a href="/demos/planetgen/">Planet Generator🪐</a>

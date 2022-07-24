@@ -14,7 +14,7 @@
         https://github.com/believeinlain
       </a>
     </p>
-    <h3>Work Experience</h3>
+    <h2>Work Experience</h2>
     <Entry>
       <span slot="position">
         Computer Engineer at Oceanit Laboratories Inc.
@@ -87,7 +87,7 @@
         </li>
       </span>
     </Entry>
-    <h3>Education</h3>
+    <h2>Education</h2>
     <Entry>
       <span slot="position">
         Bachelor of Science in Computer Engineering, Cum Laude
@@ -99,12 +99,6 @@
         <li>
           Chapter Treasurer for Delta Omega Chapter of IEEE-HKN Honor Society,
           2021-2022
-          <ul>
-            <li>
-              Applied for and received funding, handled dues and reimbursements
-              with zero incidents
-            </li>
-          </ul>
         </li>
         <li>
           Software Engineer for VIP Team RoSE, 2021-2022
@@ -122,7 +116,7 @@
         </li>
       </span>
     </Entry>
-    <h3>Projects</h3>
+    <h2>Projects</h2>
     <Entry>
       <span slot="position">
         Real-Time Event-Based Tracking and Detection for Maritime Environments
@@ -139,13 +133,12 @@
           multi-threaded C++ core wrapped in Cython
         </li>
         <li>
-          Published as first author in IEEE AIPR 2021 Proceedings - preprint
-          available at
+          Published as first author in IEEE AIPR 2021 Proceedings:
           <a
             href="https://doi.org/10.1109/AIPR52630.2021.9762225"
             target="_blank"
           >
-            https://doi.org/10.1109/AIPR52630.2021.9762225
+            10.1109/AIPR52630.2021.9762225
           </a>
         </li>
       </span>
@@ -175,13 +168,7 @@
 
 <style>
   p,
-  h3 {
+  h2 {
     text-align: center;
-  }
-  h3 {
-    font-weight: normal;
-    text-decoration: underline;
-    line-height: 50%;
-    text-transform: uppercase;
   }
 </style>
