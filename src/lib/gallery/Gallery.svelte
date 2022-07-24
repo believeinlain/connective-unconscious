@@ -30,7 +30,7 @@
   export let album_name;
 
   import { page } from '$app/stores';
-  import captions from '$lib/captions.json';
+  import captions from '$lib/gallery/captions.json';
 
   const album_captions = captions[album_name];
 
