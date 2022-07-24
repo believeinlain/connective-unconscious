@@ -7,7 +7,7 @@ const config = {
 			// default options are shown
 			out: 'build',
 			precompress: false,
-			envPrefix: ''
+			envPrefix: 'BACKEND_'
 		}),
 		files: {
 			assets: 'static',
