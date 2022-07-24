@@ -6,11 +6,11 @@
 <Page page_title="Stephanie Aelmore">
   <span>
     <p>
-      <a href="https://linkedin.com/in/stephanie-aelmore">
+      <a href="https://linkedin.com/in/stephanie-aelmore" target="_blank">
         https://linkedin.com/in/stephanie-aelmore
       </a>
       -
-      <a href="https://github.com/believeinlain">
+      <a href="https://github.com/believeinlain" target="_blank">
         https://github.com/believeinlain
       </a>
     </p>
@@ -141,7 +141,10 @@
         <li>
           Published as first author in IEEE AIPR 2021 Proceedings - preprint
           available at
-          <a href="https://doi.org/10.1109/AIPR52630.2021.9762225">
+          <a
+            href="https://doi.org/10.1109/AIPR52630.2021.9762225"
+            target="_blank"
+          >
             https://doi.org/10.1109/AIPR52630.2021.9762225
           </a>
         </li>
