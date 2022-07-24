@@ -1,33 +1,34 @@
 {
-	"engines": {
-		"node": "^16.13.1"
-	},
-	"name": "connective-unconscious",
-	"version": "0.2.1",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"package": "svelte-kit package",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync",
-		"test": "playwright test",
-		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
-		"format": "prettier --write --plugin-search-dir=. ."
-	},
-	"devDependencies": {
-		"@playwright/test": "^1.22.2",
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-node": "^1.0.0-next.83",
-		"@sveltejs/kit": "next",
-		"eslint": "^8.16.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"express": "^4.18.1",
-		"prettier": "^2.6.2",
-		"prettier-plugin-svelte": "^2.7.0",
-		"svelte": "^3.44.0",
-		"svelte-toolbox": "^0.6.1",
-		"vite": "^3.0.0"
-	},
-	"type": "module"
+  "engines": {
+    "node": "^16.13.1"
+  },
+  "name": "connective-unconscious",
+  "version": "0.3.0",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "package": "svelte-kit package",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync",
+    "test": "playwright test",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint .",
+    "format": "prettier --write --plugin-search-dir=. ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.22.2",
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-node": "^1.0.0-next.83",
+    "@sveltejs/kit": "next",
+    "bootstrap": "^5.2.0",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "express": "^4.18.1",
+    "prettier": "^2.6.2",
+    "prettier-plugin-svelte": "^2.7.0",
+    "svelte": "^3.44.0",
+    "svelte-toolbox": "^0.6.1",
+    "vite": "^3.0.0"
+  },
+  "type": "module"
 }
