@@ -6,9 +6,11 @@
   <span>
     <h1>Welcome to my Demonstrations page</h1>
     <p>A collection of web applets and toys that I've made and hosted here.</p>
-      <p>All source code is
-      available on
-      <a href="https://github.com/believeinlain" _target="blank">my GitHub page.</a>
+    <p>
+      All source code is available on
+      <a href="https://github.com/believeinlain" _target="blank"
+        >my GitHub page.</a
+      >
     </p>
     <ul>
       <li>

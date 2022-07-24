@@ -15,7 +15,8 @@
   <span slot="footer">
     <p>
       Applet by Stephanie Aelmore. Source available
-      <a href="https://github.com/believeinlain/planetgen-js" target="_blank">here</a>
+      <a href="https://github.com/believeinlain/planetgen-js" target="_blank"
+        >here</a>
       under the MIT License.
     </p>
   </span>
@@ -29,7 +30,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-
     position: absolute;
   }
 </style>

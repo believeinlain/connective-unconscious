@@ -1,12 +1,9 @@
 <script>
-  import Frame from '$lib/Frame.svelte';
-  import Navbar from '$lib/Navbar.svelte';
+  import Page from '$lib/Page.svelte';
 </script>
 
-<svelte:head>
-  <title>Resume</title>
-</svelte:head>
-
-<Frame type="header">
-  <Navbar title="Resume" />
-</Frame>
+<Page page_title="Resume" show_footer={false}>
+  <span>
+    <h1>Stephanie Aelmore</h1>
+  </span>
+</Page>

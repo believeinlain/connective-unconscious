@@ -3,7 +3,7 @@
     "node": "^16.13.1"
   },
   "name": "connective-unconscious",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",

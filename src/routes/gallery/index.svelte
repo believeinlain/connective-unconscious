@@ -6,8 +6,8 @@
   <span>
     <h1>Welcome to the Gallery</h1>
     <p>
-      A collection of photos in the public domain that I've taken, assembled into meaningful
-      sequences.
+      A collection of photos in the public domain that I've taken, assembled
+      into meaningful sequences.
     </p>
     <ul>
       <li>

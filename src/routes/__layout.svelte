@@ -1,3 +1,4 @@
+<!-- Root layout page. Mostly I just use this for global style since I like to use custom layouts. -->
 <slot />
 
 <style>

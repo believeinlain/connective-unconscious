@@ -36,7 +36,10 @@
 
   const image = $page.url.searchParams.get('image');
 
-  export let { photo_name, photo_id, last_id, next_id } = get_album_photo(image, album_captions);
+  export let { photo_name, photo_id, last_id, next_id } = get_album_photo(
+    image,
+    album_captions
+  );
   export let caption = album_captions[photo_name];
 </script>
 
