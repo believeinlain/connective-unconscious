@@ -4,7 +4,7 @@
   import Content from '$lib/layout/Content.svelte';
 
   // Title used for the html head element and for the navbar header
-  export let page_title;
+  export let page_title = undefined;
 
   const head_title = page_title
     ? `${page_title} : Connective Unconscious`

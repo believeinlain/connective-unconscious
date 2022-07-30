@@ -1,5 +1,7 @@
 <script>
   import Page from '$lib/layout/Page.svelte';
+  export let pwd;
+  console.log("Client fetch:", pwd);
 </script>
 
 <Page>

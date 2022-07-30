@@ -8,6 +8,7 @@
   <a href="/gallery">Gallery</a>
   <a href="/demos">Demos</a>
   <a href="/resume">Resume</a>
+  <a href="/login">🔒</a>
 </div>
 
 <style>
