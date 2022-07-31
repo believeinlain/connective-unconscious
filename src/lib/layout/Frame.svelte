@@ -17,6 +17,7 @@
 <style>
   .lock {
     text-decoration: none;
+    align-self: center;
   }
   .header,
   .footer {
@@ -33,6 +34,7 @@
     z-index: 2;
   }
   .footer {
+    min-height: 30px;
     bottom: 0;
     padding-top: 0;
     padding-bottom: 0;
