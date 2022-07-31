@@ -1,11 +1,11 @@
 <script>
   import Page from '$lib/layout/Page.svelte';
-  import { Form, Field, ErrorMessage } from 'svelte-forms-lib';
+  import { createForm } from 'svelte-forms-lib';
   import { session } from '$app/stores';
 
   let message;
 
-  const formProps = {
+  const { form, handleChange, handleSubmit } = createForm({
     initialValues: {
       username: '',
       password: ''
@@ -37,25 +37,57 @@
         return session;
       });
     }
-  };
+  });
 </script>
 
 <Page>
   <span>
     <h2>Please enter your credentials:</h2>
-    <Form {...formProps}>
-      <label for="username">User</label>
-      <Field name="username" type="text" />
-      <ErrorMessage name="username" />
+    <form class="form" on:submit={handleSubmit}>
+      <div for="username">Username</div>
+      <input
+        id="username"
+        name="username"
+        on:change={handleChange}
+        bind:value={$form.username}
+      />
+      <p />
+      <div for="password">Password</div>
 
-      <label for="password">Password</label>
-      <Field name="password" type="password" />
-      <ErrorMessage name="password" />
+      <input
+        id="password"
+        name="password"
+        type="password"
+        on:change={handleChange}
+        bind:value={$form.password}
+      />
 
-      <button type="submit">submit</button>
+      <p />
+      <button type="submit">Submit</button>
       {#if message}
         <p>{message}</p>
       {/if}
-    </Form>
+    </form>
   </span>
 </Page>
+
+<style>
+  input {
+    max-width: 400px;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    background: rgb(70, 70, 70);
+    color: #fff;
+  }
+  button {
+    display: block;
+    padding: 10px 18px;
+    min-width: 120px;
+    cursor: pointer;
+    background: rgb(207, 207, 207);
+  }
+  button:hover {
+    background: #fff;
+  }
+</style>
