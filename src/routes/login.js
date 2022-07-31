@@ -1,5 +1,5 @@
 import * as bcrypt from 'bcrypt';
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import { env } from '$env/dynamic/private';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */

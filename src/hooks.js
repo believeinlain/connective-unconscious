@@ -1,5 +1,5 @@
 import * as cookie from 'cookie';
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import { env } from '$env/dynamic/private';
 
 export async function handle({ event, resolve }) {
@@ -8,10 +8,9 @@ export async function handle({ event, resolve }) {
 
   if (token) {
     jwt.verify(cookies.jwt, env.JWT_SECRET, function (err, decoded) {
-      console.log('secret', env.JWT_SECRET);
       if (err) console.log(err);
       else {
-        console.log('jwt verified:', decoded);
+        console.log('Serving page for logged in user:', decoded.username);
         event.locals.user = decoded.username;
       }
     });
