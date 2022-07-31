@@ -1,4 +1,5 @@
 <script>
+  import { session } from '$app/stores';
   export let title;
 </script>
 
@@ -8,6 +9,9 @@
   <a href="/gallery">Gallery</a>
   <a href="/demos">Demos</a>
   <a href="/resume">Resume</a>
+  {#if $session.user}
+    <a href="/logout">Logout</a>
+  {/if}
 </div>
 
 <style>
@@ -17,7 +21,7 @@
     height: 100%;
     margin: auto;
   }
-  a {
+  .navbar a {
     display: block;
     float: left;
     width: fit-content;

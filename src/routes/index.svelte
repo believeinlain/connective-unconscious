@@ -1,3 +1,14 @@
+<script context="module">
+  import { browser } from '$app/env';
+
+  /** @type {import('./__types/[slug]').Load} */
+  export async function load({ params, fetch, session, stuff }) {
+    if (browser) {
+      console.log('On client:', session);
+    }
+  }
+</script>
+
 <script>
   import Page from '$lib/layout/Page.svelte';
 </script>

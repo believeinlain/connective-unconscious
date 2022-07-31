@@ -1,12 +1,24 @@
 <script>
+  import { session } from '$app/stores';
   export let type;
 </script>
 
 <div class={type}>
   <slot />
+  {#if type == 'footer'}
+    {#if $session.user}
+      <p class="lock">{$session.user}🔓</p>
+    {:else}
+      <a class="lock" href="/login">🔒</a>
+    {/if}
+  {/if}
 </div>
 
 <style>
+  .lock {
+    text-decoration: none;
+    align-self: center;
+  }
   .header,
   .footer {
     box-sizing: border-box;
@@ -22,9 +34,15 @@
     z-index: 2;
   }
   .footer {
+    min-height: 30px;
     bottom: 0;
     padding-top: 0;
     padding-bottom: 0;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
   }
   .header {
     top: 0;
