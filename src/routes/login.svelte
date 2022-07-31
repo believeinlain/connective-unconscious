@@ -42,32 +42,39 @@
 
 <Page>
   <span>
-    <h2>Please enter your credentials:</h2>
-    <form class="form" on:submit={handleSubmit}>
-      <div for="username">Username</div>
-      <input
-        id="username"
-        name="username"
-        on:change={handleChange}
-        bind:value={$form.username}
-      />
-      <p />
-      <div for="password">Password</div>
+    {#if $session.user}
+      <p>Signed in as {$session.user}.</p>
+      <form action="/logout">
+        <button type="submit">Logout</button>
+      </form>
+    {:else}
+      <h2>Please enter your credentials:</h2>
+      <form class="form" on:submit={handleSubmit}>
+        <div for="username">Username</div>
+        <input
+          id="username"
+          name="username"
+          on:change={handleChange}
+          bind:value={$form.username}
+        />
+        <p />
+        <div for="password">Password</div>
 
-      <input
-        id="password"
-        name="password"
-        type="password"
-        on:change={handleChange}
-        bind:value={$form.password}
-      />
+        <input
+          id="password"
+          name="password"
+          type="password"
+          on:change={handleChange}
+          bind:value={$form.password}
+        />
 
-      <p />
-      <button type="submit">Submit</button>
-      {#if message}
-        <p>{message}</p>
-      {/if}
-    </form>
+        <p />
+        <button type="submit">Submit</button>
+        {#if message}
+          <p>{message}</p>
+        {/if}
+      </form>
+    {/if}
   </span>
 </Page>
 
