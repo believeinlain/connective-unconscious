@@ -1,4 +1,5 @@
 import * as bcrypt from 'bcrypt';
+import * as jwt from 'jsonwebtoken';
 import { env } from '$env/dynamic/private';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
@@ -27,14 +28,13 @@ export async function POST({ request }) {
     };
   }
 
-  const json = JSON.stringify(username);
-  const value = Buffer.from(json).toString('base64');
+  const token = jwt.sign({ username }, env.JWT_SECRET);
 
   return {
     status: 200,
     headers: {
       'access-control-allow-origin': '*',
-      'set-cookie': `jwt=${value}; Path=/; HttpOnly`,
+      'set-cookie': `jwt=${token}; Path=/; HttpOnly`,
       'content-type': 'application/json'
     },
     body: {
