@@ -21,7 +21,7 @@
       return errs;
     },
     onSubmit: async ({ username, password }) => {
-      const response = await fetch('http://127.0.0.1:5173/login', {
+      const response = await fetch('login', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: {

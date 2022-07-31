@@ -4,7 +4,8 @@
   import { session } from '$app/stores';
 
   if (browser) {
-    session.update( (session) => {session.user = undefined; return session;});
+    fetch('logout', { method: 'POST' });
+    $session.user = null;
   }
 </script>
 

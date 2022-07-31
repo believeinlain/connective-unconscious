@@ -15,16 +15,32 @@ export async function POST({ request }) {
         console.log("Incorrect username.");
     }
 
+    if (!correct) {
+        return {
+            status: 401,
+            headers: {
+                'access-control-allow-origin': '*',
+                'content-type': 'application/json',
+            },
+            body: {
+                message: 'Incorrect username or password.',
+            },
+        };
+    }
+
+    const json = JSON.stringify(username);
+	const value = Buffer.from(json).toString('base64');
+
     return {
-        status: correct ? 200 : 401,
+        status: 200,
         headers: {
             'access-control-allow-origin': '*',
-            'accept': 'application/json',
+			'set-cookie': `jwt=${value}; Path=/; HttpOnly`,
+            'content-type': 'application/json',
         },
         body: {
-            user: correct ? username : undefined,
-            message: correct ? 'Successfully signed in.' :
-                'Incorrect username or password.',
+            user: username,
+            message: 'Successfully signed in.',
         },
     };
 }
