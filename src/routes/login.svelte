@@ -1,52 +1,58 @@
 <script>
   import Page from '$lib/layout/Page.svelte';
-  import { Form, Field } from "svelte-forms-lib";
+  import { Form, Field, ErrorMessage } from 'svelte-forms-lib';
+  import { session } from '$app/stores';
+
+  let message;
 
   const formProps = {
     initialValues: {
-      user: "",
+      username: "",
       password: ""
     },
     validate: values => {
       let errs = {};
-      if (values.user === "") {
-        errs["user"] = "user is required";
+      if (values.username === "") {
+        errs["username"] = "username is required";
       }
       if (values.password === "") {
         errs["password"] = "password is required";
       }
       return errs;
     },
-    onSubmit: async values => {
+    onSubmit: async ({ username, password }) => {
       const response = await fetch('http://127.0.0.1:5173/login', {
-        method: 'PUT',
-        body: JSON.stringify({
-          values
-        })
+        method: 'POST',
+        body: JSON.stringify({ username, password }),
+        headers: {
+          'accept': 'application/json',
+          'content-type': 'application/json',
+        }
 		  });
-      console.log("Values received from server:", response);
-      result = response;
+
+      let body = await response.json();
+      message = body.message;
+      session.update( (session) => {session.user = body.user; return session;});
     }
   };
-
-  export let pwd;
-  console.log("Pwd received from server:", pwd);
-  export let result = undefined;
-  $: message = result ? "Success" : "Waiting";
 </script>
 
 <Page>
   <span>
     <h2>Please enter your credentials:</h2>
     <Form {...formProps}>
-      <label for="user">User</label>
-      <Field name="user" type="text" />
+      <label for="username">User</label>
+      <Field name="username" type="text" />
+      <ErrorMessage name="username" />
 
       <label for="password">Password</label>
       <Field name="password" type="password" />
+      <ErrorMessage name="password" />
 
       <button type="submit">submit</button>
-      <p>{message}</p>
+      {#if message}
+        <p>{message}</p>
+      {/if}
     </Form>
   </span>
 </Page>

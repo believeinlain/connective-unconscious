@@ -1,31 +1,30 @@
 
+import * as bcrypt from 'bcrypt';
 import { env } from '$env/dynamic/private';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export async function GET() {
-    console.log("Server:", env.CU_BLOG_WRITER_PWD);
-    return {
-        status: 200,
-        headers: {
-            'access-control-allow-origin': '*'
-        },
-        body: {
-            pwd: env.CU_BLOG_WRITER_PWD
-        }
-    };
-}
+export async function POST({ request }) {
+    const { username, password } = await request.json();
 
-/** @type {import('@sveltejs/kit').RequestHandler} */
-export async function PUT({ request }) {
-    console.log("Server:", request);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    let correct = false;
+    if (username == env.WEBMASTER_UNAME) {
+        console.log("User:", username);
+        correct = await bcrypt.compare(password, env.WEBMASTER_PWD_HASH);
+        console.log(correct ? "Password match." : "Incorrect password.");
+    } else {
+        console.log("Incorrect username.");
+    }
+
     return {
-        status: 201,
+        status: correct ? 200 : 401,
         headers: {
-            'access-control-allow-origin': '*'
+            'access-control-allow-origin': '*',
+            'accept': 'application/json',
         },
         body: {
-            result: "Success"
-        }
+            user: correct ? username : undefined,
+            message: correct ? 'Successfully signed in.' :
+                'Incorrect username or password.',
+        },
     };
 }
