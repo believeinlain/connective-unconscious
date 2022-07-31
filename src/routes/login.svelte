@@ -7,16 +7,16 @@
 
   const formProps = {
     initialValues: {
-      username: "",
-      password: ""
+      username: '',
+      password: ''
     },
-    validate: values => {
+    validate: (values) => {
       let errs = {};
-      if (values.username === "") {
-        errs["username"] = "username is required";
+      if (values.username === '') {
+        errs['username'] = 'username is required';
       }
-      if (values.password === "") {
-        errs["password"] = "password is required";
+      if (values.password === '') {
+        errs['password'] = 'password is required';
       }
       return errs;
     },
@@ -25,14 +25,17 @@
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: {
-          'accept': 'application/json',
-          'content-type': 'application/json',
+          accept: 'application/json',
+          'content-type': 'application/json'
         }
-		  });
+      });
 
       let body = await response.json();
       message = body.message;
-      session.update( (session) => {session.user = body.user; return session;});
+      session.update((session) => {
+        session.user = body.user;
+        return session;
+      });
     }
   };
 </script>
