@@ -9,6 +9,7 @@ export async function POST({ request }) {
   let correct = false;
   if (username == env.WEBMASTER_UNAME) {
     console.log('User:', username);
+    console.log('WEBMASTER_PWD_HASH', env.WEBMASTER_PWD_HASH);
     correct = await bcrypt.compare(password, env.WEBMASTER_PWD_HASH);
     console.log(correct ? 'Password match.' : 'Incorrect password.');
   } else {
