@@ -5,7 +5,7 @@
 <svelte:head>
   <script
     defer
-    src="https://cdn.jsdelivr.net/gh/believeinlain/planetgen-js@0.1.3/dist/planetgen.js"></script>
+    src="https://cdn.jsdelivr.net/gh/believeinlain/planetgen-js@0.1.4.1/dist/planetgen.js"></script>
 </svelte:head>
 
 <Page page_title="Planet Generator 🪐">
