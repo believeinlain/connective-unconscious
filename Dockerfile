@@ -28,6 +28,9 @@ WORKDIR /usr/src/app
 # Copy the built binary from the builder stage
 COPY --from=builder /usr/src/app/target/release/server ./
 
+# Copy static files
+COPY --from=builder /usr/src/app/static ./static
+
 # Expose any necessary ports
 EXPOSE 3000
 
