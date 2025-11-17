@@ -32,4 +32,4 @@ COPY --from=builder /usr/src/app/target/release/server ./
 EXPOSE 3000
 
 # Command to run your application
-CMD ["./main"]
+CMD ["./server"]
