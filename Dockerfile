@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY Cargo.toml Cargo.lock ./
 
 # Build dependencies to cache them
-RUN mkdir src && \
+RUN mkdir -p src/bin && \
     echo "fn main() {}" > src/bin/server.rs && \
     cargo build --release && \
     rm -rf src
