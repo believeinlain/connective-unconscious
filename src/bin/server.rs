@@ -91,7 +91,7 @@ struct User {
 }
 
 async fn style() -> Css<&'static str> {
-    const STYLE_CSS: &str = include_str!("../include/style.css");
+    const STYLE_CSS: &str = include_str!("../../include/style.css");
 
     Css(STYLE_CSS)
 }

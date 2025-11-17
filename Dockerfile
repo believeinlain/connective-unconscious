@@ -4,8 +4,6 @@ FROM rust:bookworm as builder
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 
-ENV SQLX_OFFLINE=true
-
 # Copy the Cargo.toml and Cargo.lock files to the working directory
 COPY Cargo.toml Cargo.lock ./
 
@@ -24,14 +22,11 @@ RUN cargo build --release
 # Create a new lightweight image without the build dependencies
 FROM debian:bookworm-slim
 
-RUN apt-get update && apt install -y openssl
-
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 
 # Copy the built binary from the builder stage
-COPY --from=builder /usr/src/app/target/release/main ./
-COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY --from=builder /usr/src/app/target/release/server ./
 
 # Expose any necessary ports
 EXPOSE 3000
