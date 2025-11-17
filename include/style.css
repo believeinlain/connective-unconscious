@@ -1,0 +1,39 @@
+:root {
+    --header-height: 100px;
+    background-image: url(images/home_bkg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #ccc
+}
+
+a:link,
+a:visited {
+    text-decoration: none
+}
+
+a:hover,
+a:active {
+    text-decoration: underline
+}
+
+a:hover {
+    color: #b0e0e0
+}
+
+a:link {
+    color: #66d5e4
+}
+
+a:visited {
+    color: #6682ce
+}
+
+.content {
+    background-color: #111c;
+    max-width: 800px;
+    margin: auto;
+    padding: 2%;
+    padding-top: calc(var(--header-height) - 10px)
+}
