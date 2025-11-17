@@ -1,5 +1,5 @@
 # Use the official Rust image as the base image
-FROM rust:bookworm as builder
+FROM rust:bookworm AS builder
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -35,4 +35,4 @@ COPY --from=builder /usr/src/app/static ./static
 EXPOSE 3000
 
 # Command to run your application
-CMD ["./server"]
+ENTRYPOINT ["./server"]
