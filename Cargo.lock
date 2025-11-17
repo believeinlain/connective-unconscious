@@ -82,20 +82,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "axum-test"
-version = "0.1.0"
-dependencies = [
- "axum",
- "axum-extra",
- "hypertext",
- "log",
- "serde",
- "tokio",
- "tower-http",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "bitflags"
 version = "2.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -112,6 +98,20 @@ name = "cfg-if"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801"
+
+[[package]]
+name = "connective-unconscious"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "axum-extra",
+ "hypertext",
+ "log",
+ "serde",
+ "tokio",
+ "tower-http",
+ "tracing-subscriber",
+]
 
 [[package]]
 name = "fnv"
