@@ -8,7 +8,6 @@
   <a href="/">Home</a>
   <a href="/gallery">Gallery</a>
   <a href="/demos">Demos</a>
-  <a href="/resume">Resume</a>
   {#if $session.user}
     <a href="/logout">Logout</a>
   {/if}
