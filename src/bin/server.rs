@@ -1,7 +1,8 @@
-use std::{net::SocketAddrV4, str::FromStr};
+use std::{collections::HashMap, net::SocketAddrV4, str::FromStr};
 
 use axum::{
     Json, Router,
+    extract::Query,
     http::StatusCode,
     routing::{get, get_service, post},
 };
@@ -9,7 +10,7 @@ use maud::{DOCTYPE, Markup, html};
 use serde::{Deserialize, Serialize};
 use tower_http::services::ServeDir;
 
-use connective_unconscious::{page, style};
+use connective_unconscious::{gallery::NIHONNOYUME, page, style};
 
 #[tokio::main]
 async fn main() {
@@ -23,6 +24,8 @@ async fn main() {
     // build our application with a route
     let app = Router::new()
         .route("/", get(home))
+        .route("/gallery", get(gallery))
+        .route("/gallery/nihonnoyume", get(nihonnoyume))
         .route("/style.css", get(style))
         .route("/users", post(create_user))
         .nest_service("/images", get_service(ServeDir::new("/static/images")));
@@ -33,6 +36,26 @@ async fn main() {
     axum::serve(listener, app).await.unwrap();
 }
 
+async fn nihonnoyume(Query(params): Query<HashMap<String, i32>>) -> Markup {
+    let idx: usize = params
+        .get("image")
+        .copied()
+        .unwrap_or_default()
+        .try_into()
+        .unwrap_or_default();
+
+    let (image, caption) = NIHONNOYUME[idx];
+
+    page(
+        "日本の夢 : Connective Unconscious",
+        html! {
+            h2 { "Welcome to the Connective Unconscious" }
+            p { (image) }
+            p { (caption) }
+        },
+    )
+}
+
 async fn home() -> Markup {
     page(
         "Connective Unconscious",
@@ -41,6 +64,29 @@ async fn home() -> Markup {
             p { "Feel free to check out the different pages I have here via the navbar." }
             p { "More updates coming soon." }
             p { "Thank you for visiting!" }
+        },
+    )
+}
+
+async fn gallery() -> Markup {
+    page(
+        "Gallery : Connective Unconscious",
+        html! {
+            h2 { "Welcome to the Gallery" }
+            p {
+                r#"A collection of photos in the public domain that I've taken,
+                assembled into meaningful sequences."#
+            }
+            ul {
+                li {
+                    a href="/gallery/nihonnoyume/" { "日本の夢" }
+                    " An illustrated poem, half-remembered from disjointed dreams."
+                }
+                li {
+                    a href="/gallery/jikannoyume/" { "時間の夢" }
+                    " The passage of time."
+                }
+            }
         },
     )
 }

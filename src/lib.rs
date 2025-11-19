@@ -1,6 +1,8 @@
 use axum_extra::response::Css;
 use maud::{DOCTYPE, Markup, html};
 
+pub mod gallery;
+
 pub async fn style() -> Css<&'static str> {
     const STYLE_CSS: &str = include_str!("../include/style.css");
 
