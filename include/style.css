@@ -8,6 +8,8 @@
     color: #ccc
 }
 
+/* Element defaults */
+
 a:link,
 a:visited {
     text-decoration: none
@@ -30,10 +32,90 @@ a:visited {
     color: #6682ce
 }
 
+/* Content */
+
 .content {
-    background-color: #111c;
+    background-color: rgba(17, 17, 17, 0.8);
     max-width: 800px;
     margin: auto;
     padding: 2%;
-    padding-top: calc(var(--header-height) - 10px)
+    padding-top: calc(var(--header-height) - 10px);
+}
+
+/* Header and Footer */
+
+.lock {
+    text-decoration: none;
+    align-self: center;
+}
+
+.header,
+.footer {
+    box-sizing: border-box;
+    margin: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(17, 17, 17, 0.8);
+    line-height: 0;
+    padding: 10px;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.footer {
+    min-height: 30px;
+    bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.header {
+    top: 0;
+    text-align: center;
+    display: grid;
+    height: var(--header-height);
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin: auto;
+}
+
+.navbar a {
+    display: block;
+    float: left;
+    width: fit-content;
+    height: fit-content;
+    padding: 15px;
+    margin: 2px;
+    border: 1px solid #222;
+    background-color: rgba(34, 34, 34, 0.8);
+    text-decoration: none;
+}
+
+.navbar a:link {
+    border-color: #888;
+    color: #eee;
+}
+
+.navbar a:visited {
+    border-color: #555;
+    color: #ddd;
+}
+
+.navbar a:hover {
+    color: #fff;
+    border-color: #fff;
+    text-decoration: none;
 }
